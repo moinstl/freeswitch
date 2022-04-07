@@ -556,16 +556,16 @@ static void event_handler(switch_event_t *event)
 }
 
 static switch_state_handler_table_t state_handlers = {
-	/*.on_init */ NULL,
+	/*.on_init */,
 	/*.on_routing */ NULL,
 	/*.on_execute */ NULL,
 	/*.on_hangup */ NULL,
-	/*.on_exchange_media */ NULL,
+	/*.on_exchange_media */ my_on_reporting,
 	/*.on_soft_execute */ NULL,
-	/*.on_consume_media */ NULL,
+	/*.on_consume_media */ my_on_reporting,
 	/*.on_hibernate */ NULL,
 	/*.on_reset */ NULL,
-	/*.on_park */ NULL,
+	/*.on_park */ my_on_reporting,
 	/*.on_reporting */ my_on_reporting
 };
 
